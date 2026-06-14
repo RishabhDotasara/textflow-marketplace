@@ -1,0 +1,9 @@
+{
+  "name": "Dark Mode Toggle",
+  "description": "Instantly switch any website to a beautiful dark mode using smart CSS inversion.",
+  "icon": "Moon",
+  "capabilities": ["dom"],
+  "triggers": ["manual", "on_page_load"],
+  "author": "TextFlow Community",
+  "code": "const isDark = await storage.get('dark_mode_state');\nif (isDark) {\n  const id = await storage.get('dark_mode_css_id');\n  if (id) await dom.removeCSS(id);\n  await storage.set('dark_mode_state', false);\n  spinner.show('Dark mode disabled');\n  setTimeout(() => spinner.hide(), 1000);\n} else {\n  const id = await dom.injectCSS(`\n    html { filter: invert(1) hue-rotate(180deg) !important; }\n    img, video, iframe, canvas { filter: invert(1) hue-rotate(180deg) !important; }\n  `);\n  await storage.set('dark_mode_css_id', id);\n  await storage.set('dark_mode_state', true);\n  spinner.show('Dark mode enabled');\n  setTimeout(() => spinner.hide(), 1000);\n}"
+}

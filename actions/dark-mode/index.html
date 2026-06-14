@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dark Mode Toggle - TextFlow Marketplace</title>
+  <link rel="stylesheet" href="../../src/style.css" />
+</head>
+<body class="min-h-screen bg-[var(--bg)] text-[var(--text)] font-sans antialiased">
+  
+  <header class="border-b border-white/10 glass sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-bold text-lg hover:opacity-80 transition-opacity">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path><path d="M12 12v9"></path><path d="m8 17 4 4 4-4"></path></svg>
+        TextFlow Marketplace
+      </a>
+      <nav class="flex gap-6 text-sm font-medium text-white/70">
+        <a href="/" class="hover:text-white transition-colors">All Actions</a>
+        <a href="#" class="hover:text-white transition-colors">Documentation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-16">
+    <div class="flex flex-col md:flex-row gap-12">
+      <!-- Left Column: Details -->
+      <div class="flex-1 space-y-8">
+        <div>
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/20 text-primary mb-6 ring-1 ring-primary/30 shadow-lg shadow-primary/20">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+          </div>
+          <h1 class="text-4xl font-bold tracking-tight mb-4">Dark Mode Toggle</h1>
+          <p class="text-lg text-white/60 leading-relaxed">
+            Instantly switch any website to a beautiful dark mode using smart CSS inversion. Preserves images and videos so they don't look weird.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg>
+            dom
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M3 9h18"></path><path d="M9 21V9"></path></svg>
+            storage
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
+            manual trigger
+          </span>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold border-b border-white/10 pb-2">How it works</h3>
+          <p class="text-sm text-white/70">
+            This action utilizes the <code>dom.injectCSS</code> capability to forcefully inject a high-specificity stylesheet into any active tab. It utilizes CSS filters to invert colors while protecting visual media. State is persisted via the <code>storage</code> SDK so the dark mode can be toggled on and off cleanly.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Column: Sidebar -->
+      <div class="w-full md:w-80 shrink-0">
+        <div class="glass rounded-2xl p-6 space-y-6">
+          <div>
+            <h3 class="font-semibold mb-1">Author</h3>
+            <p class="text-sm text-white/60">TextFlow Community</p>
+          </div>
+          
+          <button onclick="downloadAction()" class="w-full py-3 px-4 bg-primary hover:bg-primary-light text-white rounded-xl font-medium transition-colors shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
+            Download JSON
+          </button>
+
+          <div class="p-4 rounded-xl bg-white/5 border border-white/10 text-xs text-white/60 space-y-2">
+            <p class="font-semibold text-white/80">Installation Instructions:</p>
+            <ol class="list-decimal pl-4 space-y-1">
+              <li>Click Download JSON</li>
+              <li>Open TextFlow Dashboard</li>
+              <li>Click the "Import JSON" button next to "New Action"</li>
+              <li>Select the downloaded file</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function downloadAction() {
+      fetch('action.json')
+        .then(response => response.blob())
+        .then(blob => {
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.style.display = 'none';
+          a.href = url;
+          a.download = 'dark-mode-toggle.json';
+          document.body.appendChild(a);
+          a.click();
+          window.URL.revokeObjectURL(url);
+        })
+        .catch(err => alert('Failed to download action JSON.'));
+    }
+  </script>
+</body>
+</html>

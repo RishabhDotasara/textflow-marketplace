@@ -1,0 +1,12 @@
+[
+  {
+    "id": "dark-mode",
+    "name": "Dark Mode Toggle",
+    "description": "Instantly switch any website to a beautiful dark mode using smart CSS inversion.",
+    "icon": "Moon",
+    "capabilities": [
+      "dom"
+    ],
+    "author": "TextFlow Community"
+  }
+]
