@@ -20,6 +20,7 @@ actionDirs.forEach(dir => {
 });
 
 export default defineConfig({
+  base: '/textflow-marketplace/',
   plugins: [
     tailwindcss(),
   ],

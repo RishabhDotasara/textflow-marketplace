@@ -33,12 +33,12 @@
   </main>
 
   <script>
-    fetch('/actions-index.json')
+    fetch('actions-index.json')
       .then(res => res.json())
       .then(actions => {
         const grid = document.getElementById('actions-grid');
         grid.innerHTML = actions.map(action => `
-          <a href="/actions/${action.id}/" class="group block glass rounded-2xl p-6 hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/5">
+          <a href="actions/${action.id}/" class="group block glass rounded-2xl p-6 hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/5">
             <div class="flex items-start justify-between mb-4">
               <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/5 border border-white/10 group-hover:bg-primary/20 group-hover:text-primary group-hover:border-primary/30 transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
