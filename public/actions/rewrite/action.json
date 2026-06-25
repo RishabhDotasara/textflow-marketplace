@@ -1,0 +1,15 @@
+{
+    "id": "rewrite-tone",
+    "name": "Rewrite in Tone",
+    "description": "Rewrite selected text in a specific tone (Professional, Casual, Concise, Academic, or Creative)",
+    "icon": "Pen",
+    "capabilities": [
+        "ai",
+        "popup",
+        "input",
+        "spinner",
+        "dom"
+    ],
+    "author": "TextFlow",
+    "code": "const tone = await input.select(\"Rewrite in which tone?\", [\n  \"Professional\",\n  \"Casual & Friendly\",\n  \"Concise & Direct\",\n  \"Academic\",\n  \"Creative\"\n]);\nif (!tone) return;\n\nawait spinner.show(\"Rewriting...\");\ntry {\n  const result = await ai.prompt(\n    `Rewrite the following text in a ${tone.toLowerCase()} tone. Return ONLY the rewritten text, nothing else:\\n\\n${selection.text}`,\n    \"You are an expert writer. Rewrite text to match the requested tone while preserving the original meaning. Never add explanations or notes.\"\n  );\n  await spinner.hide();\n  await dom.replaceSelection(result);\n} catch (e) {\n  await spinner.hide();\n  await popup.error(\"Rewrite failed: \" + e.message);\n}"
+}

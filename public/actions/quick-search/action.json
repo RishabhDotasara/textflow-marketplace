@@ -1,0 +1,9 @@
+{
+    "id": "default-quick-search",
+    "name": "Quick Search",
+    "description": "Search selected text on Google in a new tab instantly",
+    "icon": "Search",
+    "capabilities": ["browser"],
+    "author": "TextFlow",
+    "code": "await browser.search(selection.text);"
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Successful - tee</title>
+  <link rel="stylesheet" href="./src/style.css" />
+  <style>
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: var(--primary);
+      opacity: 0;
+    }
+    
+    .blob {
+      position: absolute;
+      filter: blur(80px);
+      z-index: -1;
+      opacity: 0.15;
+    }
+    @media (prefers-color-scheme: dark) {
+      .blob { opacity: 0.1; }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[var(--bg)] text-[var(--text)] font-sans antialiased overflow-hidden relative flex flex-col">
+
+  <!-- Background Blobs -->
+  <div class="blob bg-primary w-[40rem] h-[40rem] rounded-full top-[10%] left-1/2 -translate-x-1/2"></div>
+
+  <!-- Header -->
+  <header class="border-b border-white/10 glass sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 font-bold text-lg hover:opacity-80 transition-opacity">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path><path d="M12 12v9"></path><path d="m8 17 4 4 4-4"></path></svg>
+        tee
+      </a>
+      <nav class="flex gap-6 text-sm font-medium text-white/70">
+        <a href="marketplace.html" class="hover:text-white transition-colors">Action Marketplace</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Success Content -->
+  <main class="flex-1 flex items-center justify-center px-6 relative z-10">
+    <div class="max-w-2xl w-full text-center">
+      
+      <div class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-primary/20 border-4 border-primary/30 text-primary mb-8 animate-bounce" style="animation-duration: 2s;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Payment Successful!</h1>
+      <p class="text-xl text-white/60 mb-10">Thank you for purchasing tee Premium. You now have full access to the Developer Mode and all premium features.</p>
+      
+      <div class="glass p-8 rounded-3xl text-left border-l-4 border-l-primary mb-10">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg>
+          How to activate your license:
+        </h3>
+        <ol class="list-decimal list-inside space-y-3 text-white/70">
+          <li>Check your email inbox for the receipt from <strong>LemonSqueezy</strong>.</li>
+          <li>Locate your unique <strong>License Key</strong> in the email.</li>
+          <li>Open the tee extension dashboard in your browser.</li>
+          <li>Paste the key into the activation input to unlock Developer Mode.</li>
+        </ol>
+      </div>
+
+      <a href="index.html" class="inline-block bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-3 rounded-xl font-bold transition-all">
+        Back to Home
+      </a>
+      
+    </div>
+  </main>
+
+  <!-- Simple CSS Confetti script -->
+  <script>
+    const colors = ['#C8FF00', '#E5FF80', '#ffffff'];
+    for (let i = 0; i < 50; i++) {
+      const conf = document.createElement('div');
+      conf.classList.add('confetti');
+      conf.style.left = Math.random() * 100 + 'vw';
+      conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      conf.style.top = '-10px';
+      
+      document.body.appendChild(conf);
+
+      const anim = conf.animate([
+        { transform: 'translate3d(0,0,0) rotate(0deg)', opacity: 1 },
+        { transform: \`translate3d(\${Math.random()*200 - 100}px, 100vh, 0) rotate(\${Math.random()*720}deg)\`, opacity: 0 }
+      ], {
+        duration: Math.random() * 3000 + 2000,
+        delay: Math.random() * 1000,
+        iterations: Infinity
+      });
+    }
+  </script>
+</body>
+</html>

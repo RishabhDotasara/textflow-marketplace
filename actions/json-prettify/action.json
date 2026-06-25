@@ -1,0 +1,9 @@
+{
+    "id": "default-json-prettify",
+    "name": "JSON Prettify",
+    "description": "Format and prettify JSON data with syntax highlighting",
+    "icon": "Braces",
+    "capabilities": ["popup", "clipboard"],
+    "author": "TextFlow",
+    "code": "try {\n  const parsed = JSON.parse(selection.text);\n  const pretty = JSON.stringify(parsed, null, 2);\n  await clipboard.write(pretty);\n  await popup.markdown(`## ✅ Formatted JSON\\n\\nCopied to clipboard!\\n\\n\\`\\`\\`json\\n${pretty}\\n\\`\\`\\``);\n} catch (e) {\n  await popup.error(\"Invalid JSON: \" + e.message);\n}"
+}

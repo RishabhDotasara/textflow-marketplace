@@ -1,0 +1,9 @@
+{
+    "id": "default-dictionary",
+    "name": "Dictionary",
+    "description": "Look up definitions, synonyms, and usage examples for any word",
+    "icon": "BookOpen",
+    "capabilities": ["ai", "popup", "spinner"],
+    "author": "TextFlow",
+    "code": "await spinner.show(\"Looking up definition...\");\ntry {\n  const result = await ai.prompt(\n    `Define the word or phrase: \"${selection.text}\"\n\nProvide:\n1. Part of speech\n2. Definition(s)\n3. Example sentence(s)\n4. Synonyms (if applicable)\n\nFormat the response in clean markdown.`,\n    \"You are a comprehensive dictionary. Provide clear, well-structured definitions.\"\n  );\n  await spinner.hide();\n  await popup.markdown(`## 📖 ${selection.text}\\n\\n${result}`);\n} catch (e) {\n  await spinner.hide();\n  await popup.error(\"Lookup failed: \" + e.message);\n}"
+}

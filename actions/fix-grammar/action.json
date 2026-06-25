@@ -1,0 +1,9 @@
+{
+    "id": "default-fix-grammar",
+    "name": "Fix Grammar",
+    "description": "Fix grammar, spelling, and punctuation errors inline",
+    "icon": "Check",
+    "capabilities": ["ai", "dom", "popup", "spinner"],
+    "author": "TextFlow",
+    "code": "await spinner.show(\"Fixing grammar...\");\ntry {\n  const result = await ai.prompt(\n    `Fix the grammar, spelling, and punctuation of the following text. Return ONLY the corrected text, nothing else. Do not add any explanation or notes:\\n\\n${selection.text}`,\n    \"You are a meticulous proofreader. Fix errors without changing meaning or style. Never add explanations.\"\n  );\n  await spinner.hide();\n  await dom.replaceSelection(result);\n} catch (e) {\n  await spinner.hide();\n  await popup.error(\"Grammar fix failed: \" + e.message);\n}"
+}

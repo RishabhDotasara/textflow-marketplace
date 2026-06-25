@@ -1,0 +1,9 @@
+{
+    "id": "default-highlight-note",
+    "name": "Highlight & Note",
+    "description": "Highlight selected text in yellow and save it to your notes",
+    "icon": "Highlighter",
+    "capabilities": ["dom", "notes", "popup"],
+    "author": "TextFlow",
+    "code": "await dom.highlightSelection(\"#fef08a\");\nawait notes.create({\n  title: selection.text.split(\" \").slice(0, 8).join(\" \") + \"...\",\n  content: selection.text,\n  url: selection.pageUrl\n});\nawait popup.success(\"✨ Highlighted & saved to notes!\");"
+}

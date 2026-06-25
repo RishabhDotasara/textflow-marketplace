@@ -1,12 +1,194 @@
 [
   {
+    "id": "bullet-points",
+    "name": "Bullet Points",
+    "description": "Convert any text into organized bullet points",
+    "icon": "List",
+    "capabilities": [
+      "ai",
+      "popup",
+      "spinner"
+    ],
+    "author": "TextFlow"
+  },
+  {
+    "id": "code-explain",
+    "name": "Explain Code",
+    "description": "Get a line-by-line explanation of any code snippet",
+    "icon": "Code",
+    "capabilities": [
+      "ai",
+      "popup",
+      "spinner"
+    ],
+    "author": "TextFlow"
+  },
+  {
+    "id": "copy-markdown",
+    "name": "Copy as Markdown",
+    "description": "Convert selected or full-page HTML to clean Markdown and copy to clipboard",
+    "icon": "Copy",
+    "capabilities": [
+      "clipboard",
+      "popup",
+      "page"
+    ],
+    "author": "TextFlow"
+  },
+  {
     "id": "dark-mode",
     "name": "Dark Mode Toggle",
-    "description": "Instantly switch any website to a beautiful dark mode using smart CSS inversion.",
+    "description": "Instantly toggle dark mode on any website using smart CSS inversion",
     "icon": "Moon",
     "capabilities": [
+      "dom",
+      "storage",
+      "spinner"
+    ],
+    "author": "TextFlow"
+  },
+  {
+    "id": "dictionary",
+    "name": "Dictionary",
+    "description": "Look up definitions, synonyms, and usage examples for any word",
+    "icon": "BookOpen",
+    "capabilities": [
+      "ai",
+      "popup",
+      "spinner"
+    ],
+    "author": "TextFlow"
+  },
+  {
+    "id": "explain",
+    "name": "Explain",
+    "description": "Break down complex text into simple, easy-to-understand language",
+    "icon": "Lightbulb",
+    "capabilities": [
+      "ai",
+      "popup",
+      "spinner"
+    ],
+    "author": "TextFlow"
+  },
+  {
+    "id": "fix-grammar",
+    "name": "Fix Grammar",
+    "description": "Fix grammar, spelling, and punctuation errors inline",
+    "icon": "Check",
+    "capabilities": [
+      "ai",
+      "dom",
+      "popup",
+      "spinner"
+    ],
+    "author": "TextFlow"
+  },
+  {
+    "id": "highlight-note",
+    "name": "Highlight & Note",
+    "description": "Highlight selected text in yellow and save it to your notes",
+    "icon": "Highlighter",
+    "capabilities": [
+      "dom",
+      "notes",
+      "popup"
+    ],
+    "author": "TextFlow"
+  },
+  {
+    "id": "json-prettify",
+    "name": "JSON Prettify",
+    "description": "Format and prettify JSON data with syntax highlighting",
+    "icon": "Braces",
+    "capabilities": [
+      "popup",
+      "clipboard"
+    ],
+    "author": "TextFlow"
+  },
+  {
+    "id": "quick-search",
+    "name": "Quick Search",
+    "description": "Search selected text on Google in a new tab instantly",
+    "icon": "Search",
+    "capabilities": [
+      "browser"
+    ],
+    "author": "TextFlow"
+  },
+  {
+    "id": "read-aloud",
+    "name": "Read Aloud",
+    "description": "Read selected or full-page text aloud using the browser's speech engine",
+    "icon": "Volume2",
+    "capabilities": [
+      "page",
+      "popup"
+    ],
+    "author": "TextFlow"
+  },
+  {
+    "id": "rewrite",
+    "name": "Rewrite in Tone",
+    "description": "Rewrite selected text in a specific tone (Professional, Casual, Concise, Academic, or Creative)",
+    "icon": "Pen",
+    "capabilities": [
+      "ai",
+      "popup",
+      "input",
+      "spinner",
       "dom"
     ],
-    "author": "TextFlow Community"
+    "author": "TextFlow"
+  },
+  {
+    "id": "share-email",
+    "name": "Share via Email",
+    "description": "Open an email draft with selected text and the source URL",
+    "icon": "Mail",
+    "capabilities": [
+      "browser",
+      "page"
+    ],
+    "author": "TextFlow"
+  },
+  {
+    "id": "summarize",
+    "name": "Summarize",
+    "description": "Condense any text into a clear, concise summary with key points",
+    "icon": "FileText",
+    "capabilities": [
+      "ai",
+      "popup",
+      "spinner"
+    ],
+    "author": "TextFlow"
+  },
+  {
+    "id": "translate",
+    "name": "Lazy Translate Page",
+    "description": "Translates all visible text on a webpage in batches with lazy loading on scroll, preserving UI and skipping code blocks",
+    "icon": "Languages",
+    "capabilities": [
+      "ai",
+      "popup",
+      "input",
+      "spinner",
+      "dom",
+      "page"
+    ],
+    "author": "TextFlow"
+  },
+  {
+    "id": "word-count",
+    "name": "Word Count",
+    "description": "Count words, characters, sentences, paragraphs, and estimated reading time",
+    "icon": "Hash",
+    "capabilities": [
+      "popup",
+      "page"
+    ],
+    "author": "TextFlow"
   }
 ]

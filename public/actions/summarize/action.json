@@ -1,0 +1,9 @@
+{
+    "id": "default-summarize",
+    "name": "Summarize",
+    "description": "Condense any text into a clear, concise summary with key points",
+    "icon": "FileText",
+    "capabilities": ["ai", "popup", "spinner"],
+    "author": "TextFlow",
+    "code": "await spinner.show(\"Summarizing...\");\ntry {\n  const result = await ai.prompt(\n    `Summarize the following text concisely, keeping the key points. Use bullet points for the main takeaways:\\n\\n${selection.text}`,\n    \"You are a professional editor. Create clear, concise summaries that capture the essence of the text. Always include a brief TL;DR at the top.\"\n  );\n  await spinner.hide();\n  await popup.markdown(`## 📋 Summary\\n\\n${result}`);\n} catch (e) {\n  await spinner.hide();\n  await popup.error(\"Summarization failed: \" + e.message);\n}"
+}

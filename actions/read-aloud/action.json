@@ -1,0 +1,12 @@
+{
+    "id": "default-read-aloud",
+    "name": "Read Aloud",
+    "description": "Read selected or full-page text aloud using the browser's speech engine",
+    "icon": "Volume2",
+    "capabilities": [
+        "page",
+        "popup"
+    ],
+    "author": "TextFlow",
+    "code": "const text = selection.text || await page.getText();\nif (!text || text.trim().length === 0) {\n  await popup.error(\"No text to read.\");\n  return;\n}\nawait page.speak(text, { rate: 1, pitch: 1 });\nawait popup.success(\"🔊 Reading aloud...\");"
+}

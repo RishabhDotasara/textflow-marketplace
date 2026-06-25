@@ -1,0 +1,9 @@
+{
+    "id": "default-share-email",
+    "name": "Share via Email",
+    "description": "Open an email draft with selected text and the source URL",
+    "icon": "Mail",
+    "capabilities": ["browser", "page"],
+    "author": "TextFlow",
+    "code": "const title = selection.pageTitle || \"Shared Text\";\nconst subject = encodeURIComponent(title);\nconst body = encodeURIComponent(selection.text + \"\\n\\n— Shared from \" + selection.pageUrl);\nawait browser.openTab(`mailto:?subject=${subject}&body=${body}`);"
+}

@@ -1,0 +1,9 @@
+{
+    "id": "default-bullet-points",
+    "name": "Bullet Points",
+    "description": "Convert any text into organized bullet points",
+    "icon": "List",
+    "capabilities": ["ai", "popup", "spinner"],
+    "author": "TextFlow",
+    "code": "await spinner.show(\"Extracting key points...\");\ntry {\n  const result = await ai.prompt(\n    `Convert the following text into clear, organized bullet points. Group related points together under sub-headings if the text covers multiple topics:\\n\\n${selection.text}`,\n    \"You are a professional note-taker. Extract the key information and present it as clean, scannable bullet points in markdown.\"\n  );\n  await spinner.hide();\n  await popup.markdown(`## 📝 Key Points\\n\\n${result}`);\n} catch (e) {\n  await spinner.hide();\n  await popup.error(\"Extraction failed: \" + e.message);\n}"
+}

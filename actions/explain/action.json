@@ -1,0 +1,9 @@
+{
+    "id": "default-explain",
+    "name": "Explain",
+    "description": "Break down complex text into simple, easy-to-understand language",
+    "icon": "Lightbulb",
+    "capabilities": ["ai", "popup", "spinner"],
+    "author": "TextFlow",
+    "code": "await spinner.show(\"Generating explanation...\");\ntry {\n  const result = await ai.prompt(\n    `Explain the following text in simple, clear terms. Break down any complex concepts. Use bullet points for clarity.\\n\\nText: ${selection.text}`,\n    \"You are a patient, clear teacher. Explain concepts simply without being condescending. Use analogies when helpful.\"\n  );\n  await spinner.hide();\n  await popup.markdown(`## 💡 Explanation\\n\\n${result}`);\n} catch (e) {\n  await spinner.hide();\n  await popup.error(\"Explanation failed: \" + e.message);\n}"
+}

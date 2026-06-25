@@ -1,0 +1,9 @@
+{
+    "id": "default-word-count",
+    "name": "Word Count",
+    "description": "Count words, characters, sentences, paragraphs, and estimated reading time",
+    "icon": "Hash",
+    "capabilities": ["popup", "page"],
+    "author": "TextFlow",
+    "code": "const text = selection.text || await page.getText();\nconst words = text.split(/\\s+/).filter(w => w.length > 0).length;\nconst chars = text.length;\nconst charsNoSpaces = text.replace(/\\s/g, '').length;\nconst sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0).length;\nconst paragraphs = text.split(/\\n\\s*\\n/).filter(p => p.trim().length > 0).length;\nconst readingTime = Math.max(1, Math.round(words / 200));\n\nawait popup.markdown(`## 📊 Text Statistics\\n\\n| Metric | Value |\\n|--------|-------|\\n| Words | ${words.toLocaleString()} |\\n| Characters | ${chars.toLocaleString()} |\\n| Characters (no spaces) | ${charsNoSpaces.toLocaleString()} |\\n| Sentences | ${sentences.toLocaleString()} |\\n| Paragraphs | ${paragraphs.toLocaleString()} |\\n| Reading time | ~${readingTime} min |`);"
+}

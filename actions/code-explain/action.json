@@ -1,0 +1,9 @@
+{
+    "id": "default-code-explain",
+    "name": "Explain Code",
+    "description": "Get a line-by-line explanation of any code snippet",
+    "icon": "Code",
+    "capabilities": ["ai", "popup", "spinner"],
+    "author": "TextFlow",
+    "code": "await spinner.show(\"Analyzing code...\");\ntry {\n  const result = await ai.prompt(\n    `Explain the following code snippet clearly. Include:\n1. What the code does (brief overview)\n2. A step-by-step breakdown of how it works\n3. Any notable patterns, potential issues, or edge cases\n\nCode:\n\\`\\`\\`\n${selection.text}\n\\`\\`\\``,\n    \"You are a senior software engineer and educator. Explain code clearly and thoroughly, assuming the reader has basic programming knowledge.\"\n  );\n  await spinner.hide();\n  await popup.markdown(`## 🔍 Code Explanation\\n\\n${result}`);\n} catch (e) {\n  await spinner.hide();\n  await popup.error(\"Code analysis failed: \" + e.message);\n}"
+}

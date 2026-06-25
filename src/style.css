@@ -1,19 +1,24 @@
 @import "tailwindcss";
+@source "../actions";
 
 @theme {
-  --color-primary: #aa3bff;
-  --color-primary-light: #c084fc;
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
 }
 
 :root {
-  --bg: #fff;
-  --text: #08060d;
+  --primary: #4A7C00;
+  --primary-light: #6ba800;
+  --bg: #F7F7F5;
+  --text: #111111;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0a0a0a;
-    --text: #f3f4f6;
+    --primary: #C8FF00;
+    --primary-light: #E5FF80;
+    --bg: #0D0D0D;
+    --text: #FFFFFF;
   }
 }
 

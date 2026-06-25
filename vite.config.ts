@@ -10,6 +10,8 @@ const actionDirs = fs.existsSync(resolve(__dirname, 'actions'))
 
 const input: Record<string, string> = {
   main: resolve(__dirname, 'index.html'),
+  marketplace: resolve(__dirname, 'marketplace.html'),
+  success: resolve(__dirname, 'success.html'),
 };
 
 actionDirs.forEach(dir => {
